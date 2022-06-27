@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, ParseIntPipe } from '@nestjs/common';
 import { ApiService } from 'src/service/api/api.service';
 
 @Controller('artefato')
@@ -13,7 +13,8 @@ export class ArtefatoController {
     }
 
     @Get(':id')
-    lerArtefato(@Param('id') id: string) {
+    lerArtefato(
+        @Param('id') id: string) {
         return this.api.listOne(id);
     }
 
@@ -28,7 +29,8 @@ export class ArtefatoController {
     }
 
     @Delete(':id')
-    apagarArtefato(@Param('id') id: string) {
+    apagarArtefato(
+        @Param('id') id: string) {
         return this.api.remove(id);
     }
 }

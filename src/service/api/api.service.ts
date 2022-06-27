@@ -1,58 +1,60 @@
-import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { Artefato } from 'src/Entities/artefato.entity';
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { CreateArtefatoDto } from 'src/Artefato/dto/createArtefato.dto';
+import { UpdateArtefatoDto } from 'src/Artefato/dto/updateArtefato.dto';
+import { Artefato } from 'src/Artefato/Entities/artefato.entity';
+
+import { Repository } from 'typeorm';
 
 
 @Injectable()
 export class ApiService {
 
-    private artefato: Artefato[] = [
-        {
-            "id": 2,
-            "situacao": "Ativo",
-            "classe": "Inativo",
-            "tipo": "Inativo",
-            "quantidade": 234,
-            "valorEstimado": "3234",
-            "apresentante": "asc",
-            "proprietario": "xz zx",
-            "descricao": "zx z ",
-            "observacao": "zx z ",
-        }
-    ]
+    constructor(
+        @InjectRepository(Artefato)
+        private readonly artefatorepository: Repository<Artefato>,
+    ) {
+    }
 
     listAll() {
-        return this.artefato;
+        return this.artefatorepository.find();
     }
 
     listOne(id: string) {
-        const artefato = this.artefato.find((Artefato: Artefato) => Artefato.id === Number(id));
+        const artefato = this.artefatorepository.findOne(id)
+
         if (!artefato) {
-            throw new HttpException(
-                `Course ID ${id} not found`,
-                HttpStatus.NOT_FOUND,
-            );
+            throw new NotFoundException(`Course ID ${id} not found`);
         }
         return artefato;
     }
 
-    createArtefato(createArtefatoDto: any) {
-        this.artefato.push(createArtefatoDto);
+    createArtefato(createArtefatoDto: CreateArtefatoDto) {
+
+        const artefato = this.artefatorepository.create(createArtefatoDto);
+        return this.artefatorepository.save(artefato)
     }
 
-    updateArtafeto(id: string, updateDTO: any) {
-        const indexVariavel = this.artefato.findIndex((artefato: Artefato) => artefato.id === Number(id));
-        this.artefato[indexVariavel] = updateDTO;
-    }
+    async updateArtafeto(id: string, updateDTO: UpdateArtefatoDto) {
+        const artefato = await this.artefatorepository.preload({
+            id: +id,
+            ...updateDTO,
+        });
 
-    remove(id: string) {
-        const index = this.artefato.findIndex(
-            (artefato: Artefato) => artefato.id === Number(id)
-        );
-
-        if (index >= 0) {
-            this.artefato.splice(index, 1);
-
+        if (!artefato) {
+            throw new NotFoundException(`Course ID ${id} not found`);
         }
+
+        return this.artefatorepository.save(artefato);
+    }
+
+    async remove(id: string) {
+        const artefato = await this.artefatorepository.findOne(id);
+
+        if (!artefato) {
+            throw new NotFoundException(`Course ID ${id} not found`);
+        }
+        return this.artefatorepository.remove(artefato);
     }
 
 
