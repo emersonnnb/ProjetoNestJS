@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
-import { BicicletaService } from '../service/bicicleta.service';
+import { BicicletaController } from './bicicleta.controller';
+
 
 @Module({
-  controllers: [BicicletaService]
+  controllers: [BicicletaController]
 })
-export class BicicletaModule {}
+export class BicicletaModule { }
