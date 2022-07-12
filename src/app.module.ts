@@ -3,6 +3,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ArtefatoModule } from './Artefato/artefato.module';
+import { BicicletaController } from './bicicleta/bicicleta.controller';
+import { BicicletaModule } from './bicicleta/bicicleta.module';
 
 @Module({
   imports: [ArtefatoModule, TypeOrmModule.forRoot({
@@ -15,8 +17,8 @@ import { ArtefatoModule } from './Artefato/artefato.module';
     autoLoadEntities: true,
     synchronize: true,
 
-  })],
-  controllers: [AppController],
+  }), BicicletaModule],
+  controllers: [AppController, BicicletaController],
   providers: [AppService],
 })
 export class AppModule { }
