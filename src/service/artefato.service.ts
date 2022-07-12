@@ -2,12 +2,12 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CreateArtefatoDto } from 'src/Artefato/dto/createArtefato.dto';
 import { UpdateArtefatoDto } from 'src/Artefato/dto/updateArtefato.dto';
-import { Artefato } from 'src/Artefato/Entities/artefato.entity';
+import { Artefato } from 'src/Entities/artefato.entity';
 import { Repository } from 'typeorm';
 
 
 @Injectable()
-export class ApiService {
+export class ArtefatoService {
 
     constructor(
         @InjectRepository(Artefato)
