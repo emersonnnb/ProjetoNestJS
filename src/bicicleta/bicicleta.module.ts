@@ -1,4 +1,7 @@
 import { Module } from '@nestjs/common';
+import { BicicletaService } from '../service/bicicleta.service';
 
-@Module({})
+@Module({
+  providers: [BicicletaService]
+})
 export class BicicletaModule {}
