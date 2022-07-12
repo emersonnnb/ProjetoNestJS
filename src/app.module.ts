@@ -21,7 +21,7 @@ import { OutrosModule } from './outros/outros.module';
                   database: 'docker',
                   autoLoadEntities: true,    
                   synchronize: true,
-                      }),],
+                                  }),],
   controllers: [AppController],
   providers: [AppService],
 })
