@@ -9,6 +9,8 @@ import { AtivoFinanceiroModule } from './ativo_financeiro/ativo_financeiro.modul
 =======
 import { BicicletaController } from './bicicleta/bicicleta.controller';
 import { BicicletaModule } from './bicicleta/bicicleta.module';
+import { DispositivosMoveisController } from './dispositivos-moveis/dispositivos-moveis.controller';
+import { DispositivosMoveisModule } from './dispositivos-moveis/dispositivos-moveis.module';
 >>>>>>> dff95c532df1fd70f5de65adaa4ef4c4f7f714ad
 
 @Module({
@@ -23,8 +25,8 @@ import { BicicletaModule } from './bicicleta/bicicleta.module';
     synchronize: true,
 
 <<<<<<< HEAD
-  }), AtivoFinanceiroModule],
-  controllers: [AppController, AtivoFinanceiroController],
+  }), AtivoFinanceiroModule, DispositivosMoveisModule],
+  controllers: [AppController, AtivoFinanceiroController, DispositivosMoveisController],
 =======
   }), BicicletaModule],
   controllers: [AppController, BicicletaController],
