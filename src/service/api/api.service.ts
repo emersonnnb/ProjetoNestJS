@@ -3,7 +3,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { CreateArtefatoDto } from 'src/Artefato/dto/createArtefato.dto';
 import { UpdateArtefatoDto } from 'src/Artefato/dto/updateArtefato.dto';
 import { Artefato } from 'src/Artefato/Entities/artefato.entity';
-
 import { Repository } from 'typeorm';
 
 

@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post, Put, ParseIntPipe } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { ApiService } from 'src/service/api/api.service';
 
 @Controller('artefato')
