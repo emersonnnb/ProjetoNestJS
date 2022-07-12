@@ -1,36 +1,36 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
-import { ApiService } from 'src/service/api/api.service';
+import { ArtefatoService } from 'src/service/artefato.service';
 
 @Controller('artefato')
 export class ArtefatoController {
-    constructor(private readonly api: ApiService) {
+    constructor(private readonly artefato: ArtefatoService) {
 
     }
 
     @Get()
     listaArtefato() {
-        return this.api.listAll();
+        return this.artefato.listAll();
     }
 
     @Get(':id')
     lerArtefato(
         @Param('id') id: string) {
-        return this.api.listOne(id);
+        return this.artefato.listOne(id);
     }
 
     @Post()
     criarArtefato(@Body() body) {
-        return this.api.createArtefato(body);
+        return this.artefato.createArtefato(body);
     }
 
     @Put(':id')
     atualizarArtefato(@Param('id') id: string, @Body() body) {
-        return this.api.updateArtafeto(id, body)
+        return this.artefato.updateArtafeto(id, body)
     }
 
     @Delete(':id')
     apagarArtefato(
         @Param('id') id: string) {
-        return this.api.remove(id);
+        return this.artefato.remove(id);
     }
 }

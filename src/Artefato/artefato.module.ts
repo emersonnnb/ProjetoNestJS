@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Artefato } from 'src/Artefato/Entities/artefato.entity';
-import { ApiService } from 'src/service/api/api.service';
+import { Artefato } from 'src/Entities/artefato.entity';
+import { ArtefatoService } from 'src/service/artefato.service';
 
 import { ArtefatoController } from './artefato.controller';
 
@@ -9,7 +9,7 @@ import { ArtefatoController } from './artefato.controller';
 @Module({
     imports: [TypeOrmModule.forFeature([Artefato])],
     controllers: [ArtefatoController],
-    providers: [ApiService]
+    providers: [ArtefatoService]
 })
 
 export class ArtefatoModule { }
