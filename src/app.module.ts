@@ -3,6 +3,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ArtefatoModule } from './Artefato/artefato.module';
+import { AtivoFinanceiroController } from './ativo_financeiro/ativo_financeiro.controller';
+import { AtivoFinanceiroModule } from './ativo_financeiro/ativo_financeiro.module';
 
 @Module({
   imports: [ArtefatoModule, TypeOrmModule.forRoot({
@@ -15,8 +17,8 @@ import { ArtefatoModule } from './Artefato/artefato.module';
     autoLoadEntities: true,
     synchronize: true,
 
-  })],
-  controllers: [AppController],
+  }), AtivoFinanceiroModule],
+  controllers: [AppController, AtivoFinanceiroController],
   providers: [AppService],
 })
 export class AppModule { }
