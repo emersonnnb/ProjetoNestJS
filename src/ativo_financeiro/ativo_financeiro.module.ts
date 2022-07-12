@@ -1,4 +1,8 @@
 import { Module } from '@nestjs/common';
+import { AtivoFinanceiroController } from './ativo_financeiro.controller';
 
-@Module({})
+
+@Module({
+    controllers: [AtivoFinanceiroController]
+})
 export class AtivoFinanceiroModule {}
