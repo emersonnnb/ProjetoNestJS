@@ -16,10 +16,10 @@ export class DispositivosMoveis {
     proprietario: string;
 
     @Column()
-    bloqueio: boolean;
+    bloqueio: string;
 
     @Column()
-    seguro: boolean;
+    seguro: string;
 
     @Column()
     observacao: string;

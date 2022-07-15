@@ -14,11 +14,11 @@ export class CreateDispositivosMoveisDto {
     @IsString()
     readonly proprietario: string;
 
-    @IsBoolean()
-    readonly bloqueio: boolean;
+    @IsString()
+    readonly bloqueio: string;
 
-    @IsBoolean()
-    readonly seguro: boolean;
+    @IsString()
+    readonly seguro: string;
 
     @IsString()
     readonly observacao: string;
