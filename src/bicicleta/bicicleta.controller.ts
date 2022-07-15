@@ -24,7 +24,7 @@ export class BicicletaController {
 
     @Put(':id')
     atualizarBicicleta(@Param('id') id: string, @Body() body) {
-        return this.bicicleta.updateBicicleta(id, body)
+        return this.bicicleta.updateBicicleta(id, body);
     }
 
     @Delete(':id')
