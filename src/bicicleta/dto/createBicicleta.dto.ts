@@ -17,8 +17,8 @@ export class CreateBicicletaDto {
     @IsString()
     readonly cor: string;
 
-    @IsNumber()
-    readonly valorEstimado: number;
+    @IsString()
+    readonly valorEstimado: string;
 
     @IsString()
     readonly chassi: string;
