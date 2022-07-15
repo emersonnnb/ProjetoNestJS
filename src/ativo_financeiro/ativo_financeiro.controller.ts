@@ -1,7 +1,7 @@
 import { Controller, Delete, Get, Post, Put, Param, Body } from '@nestjs/common';
 import { AtivoFinanceiroService } from 'src/service/ativo_financeiro.service';
 
-@Controller('ativo-financeiro')
+@Controller('financeiro')
 export class AtivoFinanceiroController {
     constructor(private readonly ativoFinanceiro: AtivoFinanceiroService) {
 
@@ -33,5 +33,5 @@ export class AtivoFinanceiroController {
         @Param('id') id: string) {
         return this.ativoFinanceiro.remove(id);
     }
-   
+
 }

@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Double, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Bicicleta {
@@ -19,7 +19,7 @@ export class Bicicleta {
     cor: string;
 
     @Column()
-    valorEstimado: number;
+    valorEstimado: string;
 
     @Column()
     chassi: string;
