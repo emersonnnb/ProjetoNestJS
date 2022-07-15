@@ -20,7 +20,7 @@ export class BicicletaService {
     }
 
     listOne(id: string) {
-        const bicicleta = this.bicicletarepository.findOne(id)
+        const bicicleta = this.bicicletarepository.findOne(id);
 
         if (!bicicleta) {
             throw new NotFoundException(`Curso do ID ${id} não encontrado`);
