@@ -17,7 +17,7 @@ export class CreateativoFinanceiroDto {
     readonly quantidade: number;
 
     @IsString()
-    readonly unidadedeMedida: number;
+    readonly unidadedeMedida: string;
 
     @IsString()
     readonly valorEstimado: string;

@@ -20,7 +20,7 @@ export class ativo_financeiro {
     quantidade: number;
 
     @Column()
-    unidadedeMedida: number;
+    unidadedeMedida: string;
 
     @Column()
     valorEstimado: string;
