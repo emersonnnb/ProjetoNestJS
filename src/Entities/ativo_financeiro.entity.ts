@@ -1,13 +1,13 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 
-@Entity() // decorator utilizado para mapear as tabelas do banco
-export class Artefato {
+@Entity() 
+export class ativo_financeiro {
 
-    @PrimaryGeneratedColumn()  // cria uma PRIMARY KEY AUTO_INCREMENT 
+    @PrimaryGeneratedColumn()   
     id: number;
 
-    @Column()                // Criar uma coluna no banco de dados
+    @Column()               
     situacao: string;
 
     @Column()
@@ -20,16 +20,28 @@ export class Artefato {
     quantidade: number;
 
     @Column()
+    unidadedeMedida: number;
+
+    @Column()
     valorEstimado: string;
 
     @Column()
-    apresentante: string;
+    moeda: string;
 
     @Column()
-    proprietario: string;
-    
+    proprietarioTitular: string;
+
     @Column()
     descricao: string;
+
+    @Column()
+    benificiario: string;
+
+    @Column()
+    proprietarioCotitular: string;
+
+    @Column()
+    proprietarioCootitular: string;
 
     @Column()
     observacao: string;
