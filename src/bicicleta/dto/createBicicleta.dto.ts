@@ -1,4 +1,4 @@
-import { IsNumber, IsString } from "class-validator";
+import { IsDecimal, IsNumber, IsString } from "class-validator";
 
 export class CreateBicicletaDto {
 
@@ -17,8 +17,8 @@ export class CreateBicicletaDto {
     @IsString()
     readonly cor: string;
 
-    @IsNumber()
-    readonly valorEstimado: number;
+    @IsString()
+    readonly valorEstimado: string;
 
     @IsString()
     readonly chassi: string;
