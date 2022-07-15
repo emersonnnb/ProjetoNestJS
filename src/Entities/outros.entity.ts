@@ -16,7 +16,7 @@ export class Outros {
     tipo: string;
 
     @Column()
-    valorEstimado: number;
+    valorEstimado: string;
 
     @Column()
     numerodeSerie: number;
