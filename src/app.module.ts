@@ -21,9 +21,9 @@ import { OutrosModule } from './Outros/outros.module';
                   port: 5432,
                   username: 'docker',
                   password: 'Docker@123',
-                  database: 'docker',
-                  autoLoadEntities: true,    
-                  synchronize: true,
+                  database: 'four',
+                  autoLoadEntities: false,    
+                  synchronize: false,
                                   })
             ],
   controllers: [AppController],
