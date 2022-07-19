@@ -2,7 +2,7 @@ import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common'
 import { DispositivosMoveisService } from 'src/service/dispositivos-moveis';
 
 
-@Controller('dispositivosmoveis')
+@Controller('dispositivos')
 export class dispositivosmoveisController {
 
     constructor(private readonly DispositivosMoveis: DispositivosMoveisService){}
