@@ -6,7 +6,7 @@ import { ArtefatoModule } from './Artefato/artefato.module';
 import { AtivoFinanceiroModule } from './ativo_financeiro/ativo_financeiro.module';
 import { BicicletaModule } from './bicicleta/bicicleta.module';
 import { DispositivosMoveisModule } from './dispositivos-moveis/dispositivos-moveis.module';
-import { OutrosModule } from './outros/outros.module';
+import { OutrosModule } from './Outros/outros.module';
 
 @Module({
 
