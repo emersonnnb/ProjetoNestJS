@@ -1,9 +1,10 @@
-FROM node:14.15.4-alpine3.12
+FROM node:16.0.0-slim
 
-RUN apk add --no-cache bash
+WORKDIR /usr/src/app
 
-RUN npm install -g @nestjs/cli
+COPY . .
 
-USER node
+RUN npm install
+RUN npm run build
 
-WORKDIR /home/node/app
+CMD npm run start:debug
