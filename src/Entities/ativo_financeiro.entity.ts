@@ -1,13 +1,13 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 
-@Entity() 
+@Entity()
 export class ativo_financeiro {
 
-    @PrimaryGeneratedColumn()   
+    @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()               
+    @Column()
     situacao: string;
 
     @Column()
@@ -20,7 +20,7 @@ export class ativo_financeiro {
     quantidade: number;
 
     @Column()
-    unidadedeMedida: number;
+    unidadedeMedida: string;
 
     @Column()
     valorEstimado: string;
@@ -35,7 +35,7 @@ export class ativo_financeiro {
     descricao: string;
 
     @Column()
-    benificiario: string;
+    beneficiario: string;
 
     @Column()
     proprietarioCotitular: string;

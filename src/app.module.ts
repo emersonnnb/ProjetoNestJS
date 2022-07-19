@@ -5,13 +5,16 @@ import { AppService } from './app.service';
 import { ArtefatoModule } from './Artefato/artefato.module';
 import { AtivoFinanceiroModule } from './ativo_financeiro/ativo_financeiro.module';
 import { BicicletaModule } from './bicicleta/bicicleta.module';
+import { DispositivosMoveisModule } from './dispositivos-moveis/dispositivos-moveis.module';
 import { OutrosModule } from './outros/outros.module';
 
 @Module({
-  imports: [ArtefatoModule, 
-            AtivoFinanceiroModule, 
-            BicicletaModule, 
-            OutrosModule, 
+
+  imports: [ArtefatoModule,
+            AtivoFinanceiroModule,
+            BicicletaModule,
+            OutrosModule,
+            DispositivosMoveisModule,
             TypeOrmModule.forRoot({
                   type: 'postgres',
                   host: 'localhost',
