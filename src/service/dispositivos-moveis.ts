@@ -12,7 +12,7 @@ export class DispositivosMoveisService {
     constructor(
         @InjectRepository(DispositivosMoveis)
         private readonly dispositivosMoveisrepository: Repository<DispositivosMoveis>,
-    )  {
+    ) {
 
     }
 
@@ -21,7 +21,7 @@ export class DispositivosMoveisService {
     }
 
     listOne(id: string) {
-        const DispositivosMoveis = this.dispositivosMoveisrepository.findOne(id)
+        const DispositivosMoveis = this.dispositivosMoveisrepository.findOneById(id)
 
         if (!DispositivosMoveis) {
             throw new NotFoundException(`Curso do ID ${id} não encontrado`);
@@ -47,7 +47,7 @@ export class DispositivosMoveisService {
     }
 
     async remove(id: string) {
-        const DispositivosMoveis = await this.dispositivosMoveisrepository.findOne(id);
+        const DispositivosMoveis = await this.dispositivosMoveisrepository.findOneById(id);
 
         if (!DispositivosMoveis) {
             throw new NotFoundException(`Curso do ID ${id} não encontrado`)
