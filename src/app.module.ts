@@ -17,11 +17,11 @@ import { OutrosModule } from './Outros/outros.module';
             DispositivosMoveisModule,
             TypeOrmModule.forRoot({
                   type: 'postgres',
-                  host: 'localhost',
+                  host: 'database',
                   port: 5432,
                   username: 'docker',
                   password: 'Docker@123',
-                  database: 'four',
+                  database: 'docker',
                   autoLoadEntities: false,    
                   synchronize: false,
                                   })
