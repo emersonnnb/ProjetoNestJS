@@ -22,8 +22,8 @@ import { OutrosModule } from './Outros/outros.module';
                   username: 'docker',
                   password: 'Docker@123',
                   database: 'docker',
-                  autoLoadEntities: false,    
-                  synchronize: false,
+                  autoLoadEntities: true,    
+                  synchronize: true,
                                   })
             ],
   controllers: [AppController],
