@@ -12,27 +12,26 @@ export class ArtefatoService {
     constructor(
         @InjectRepository(Artefato)
         private readonly artefatorepository: Repository<Artefato>,
-    ) {
-    }
+    ) {};
 
     listAll() {
         return this.artefatorepository.find();
-    }
+    };
 
     listOne(id: string) {
         const artefato = this.artefatorepository.findOne(id)
 
         if (!artefato) {
             throw new NotFoundException(`Course ID ${id} not found`);
-        }
+        };
         return artefato;
-    }
+    };
 
     createArtefato(createArtefatoDto: CreateArtefatoDto) {
 
         const artefato = this.artefatorepository.create(createArtefatoDto);
-        return this.artefatorepository.save(artefato)
-    }
+        return this.artefatorepository.save(artefato);
+    };
 
     async updateArtafeto(id: string, updateDTO: UpdateArtefatoDto) {
         const artefato = await this.artefatorepository.preload({
@@ -42,19 +41,19 @@ export class ArtefatoService {
 
         if (!artefato) {
             throw new NotFoundException(`Course ID ${id} not found`);
-        }
+        };
 
         return this.artefatorepository.save(artefato);
-    }
+    };
 
     async remove(id: string) {
         const artefato = await this.artefatorepository.findOne(id);
 
         if (!artefato) {
             throw new NotFoundException(`Course ID ${id} not found`);
-        }
+        };
         return this.artefatorepository.remove(artefato);
-    }
+    };
 
 
 }

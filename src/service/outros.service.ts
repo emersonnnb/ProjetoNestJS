@@ -10,7 +10,7 @@ export class OutrosService {
     constructor(
         @InjectRepository(Outros)
         private readonly outrosrepository: Repository<Outros>,
-    ) {}
+    ) {};
 
     findAll() {
         return this.outrosrepository.find();
