@@ -20,7 +20,7 @@ import { OutrosModule } from './Outros/outros.module';
     DispositivosMoveisModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'databse',
+      host: 'database',
       // host: 'localhost', rodar no nestjs
       port: 5432,
       username: 'docker',
