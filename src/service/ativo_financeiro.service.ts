@@ -7,7 +7,7 @@ import { UpdateativoFinanceiroDto } from 'src/ativo_financeiro/dto/updateativo_f
 
 @Injectable()
 export class AtivoFinanceiroService {
-    
+
     constructor(
         @InjectRepository(ativo_financeiro)
         private readonly ativoFinanceirorepository: Repository<ativo_financeiro>,
@@ -19,7 +19,7 @@ export class AtivoFinanceiroService {
     }
 
     listOne(id: string) {
-        const ativo_financeiro = this.ativoFinanceirorepository.findOne(id)
+        const ativo_financeiro = this.ativoFinanceirorepository.findOneById(id)
 
         if (!ativo_financeiro) {
             throw new NotFoundException(`Course ID ${id} not found`);
@@ -47,7 +47,7 @@ export class AtivoFinanceiroService {
     }
 
     async remove(id: string) {
-        const ativo_financeiro = await this.ativoFinanceirorepository.findOne(id);
+        const ativo_financeiro = await this.ativoFinanceirorepository.findOneById(id);
 
         if (!ativo_financeiro) {
             throw new NotFoundException(`Course ID ${id} not found`);

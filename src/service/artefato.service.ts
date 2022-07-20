@@ -19,7 +19,7 @@ export class ArtefatoService {
     };
 
     listOne(id: string) {
-        const artefato = this.artefatorepository.findOne(id)
+        const artefato = this.artefatorepository.findOneById(id)
 
         if (!artefato) {
             throw new NotFoundException(`Course ID ${id} not found`);
@@ -47,7 +47,7 @@ export class ArtefatoService {
     };
 
     async remove(id: string) {
-        const artefato = await this.artefatorepository.findOne(id);
+        const artefato = await this.artefatorepository.findOneById(id);
 
         if (!artefato) {
             throw new NotFoundException(`Course ID ${id} not found`);

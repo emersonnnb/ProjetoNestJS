@@ -10,21 +10,21 @@ export class OutrosService {
     constructor(
         @InjectRepository(Outros)
         private readonly outrosrepository: Repository<Outros>,
-    ) {};
+    ) { }
 
     findAll() {
         return this.outrosrepository.find();
     };
 
-    findOne(id: string){
-        const outros = this.outrosrepository.findOne(id);
-        if(!outros){
+    findOne(id: string) {
+        const outros = this.outrosrepository.findOneById(id);
+        if (!outros) {
             throw new NotFoundException(`O objeto de ID ${id} não encontrado`);
         };
         return outros;
     };
 
-    create(createDto: CreateOutrosDto){
+    create(createDto: CreateOutrosDto) {
         const outros = this.outrosrepository.create(createDto);
         return this.outrosrepository.save(outros);
     };
@@ -34,15 +34,15 @@ export class OutrosService {
             id: +id,
             ...updateDto,
         });
-        if(!outros){
+        if (!outros) {
             throw new NotFoundException(`O objeto de ID ${id} não encontrado`);
         };
         return this.outrosrepository.save(outros)
     };
 
     async remove(id: string) {
-        const outros = await this.outrosrepository.findOne(id);
-        if(!outros){
+        const outros = await this.outrosrepository.findOneById(id);
+        if (!outros) {
             throw new NotFoundException(`O objeto de ID ${id} não encontrado`);
         };
         return this.outrosrepository.remove(outros)
