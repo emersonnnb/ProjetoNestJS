@@ -11,24 +11,22 @@ import { OutrosModule } from './Outros/outros.module';
 
 @Module({
 
-  imports: [
-    ConfigModule.forRoot(),
+  imports: [ConfigModule.forRoot(),
     ArtefatoModule,
     AtivoFinanceiroModule,
     BicicletaModule,
     OutrosModule,
     DispositivosMoveisModule,
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'database',
-      // host: 'localhost', rodar no nestjs
-      port: 5432,
-      username: 'docker',
-      password: 'Docker@123',
-      database: 'docker',
-      autoLoadEntities: true,
-      synchronize: true,
-    })
+  TypeOrmModule.forRoot({
+    type: 'postgres',
+    host: 'localhost', // pra rodas no nest -> localhost | pra rodar no docker -> database
+    port: 5432,
+    username: 'docker',
+    password: 'Docker@123',
+    database: 'docker',
+    autoLoadEntities: true,
+    synchronize: true,
+  })
   ],
   controllers: [AppController],
   providers: [AppService],
