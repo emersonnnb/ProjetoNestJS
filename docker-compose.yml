@@ -3,7 +3,7 @@ version: '3.7'
 services:
 
   api:
-    container_name: teste1
+    container_name: ${API_NAME}
     build: .
     ports:  
       - "3000:3000"
