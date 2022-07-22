@@ -17,8 +17,8 @@ export class CreateBicicletaDto {
     @IsString()
     readonly cor: string;
 
-    @IsString()
-    readonly valorEstimado: string;
+    @IsNumber()
+    readonly valorEstimado: number;
     
     //@IsNotEmpty se é obrigatorio
 

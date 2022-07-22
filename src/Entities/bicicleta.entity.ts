@@ -18,8 +18,8 @@ export class Bicicleta {
     @Column()
     cor: string;
 
-    @Column()
-    valorEstimado: string;
+    @Column({type: 'numeric'})
+    valorEstimado: number;
 
     @Column()
     chassi: string;
