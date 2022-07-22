@@ -1,10 +1,10 @@
 import { IsNumber, IsString } from "class-validator";
 
 export class CreateativoFinanceiroDto {
-    @IsNumber()                 
-    readonly id: number;        
+    @IsNumber()
+    readonly id: number;
 
-    @IsString()                 
+    @IsString()
     readonly situacao: string;
 
     @IsString()
@@ -17,7 +17,7 @@ export class CreateativoFinanceiroDto {
     readonly quantidade: number;
 
     @IsString()
-    readonly unidadedeMedida: number;
+    readonly unidadedeMedida: string;
 
     @IsString()
     readonly valorEstimado: string;
@@ -32,7 +32,7 @@ export class CreateativoFinanceiroDto {
     readonly descricao: string;
 
     @IsString()
-    readonly benificiario: string;
+    readonly beneficiario: string;
 
     @IsString()
     readonly proprietarioCotitular: string;

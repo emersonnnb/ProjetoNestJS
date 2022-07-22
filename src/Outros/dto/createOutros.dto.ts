@@ -13,8 +13,8 @@ export class CreateOutrosDto {
     @IsString()
     readonly tipo:              string;
 
-    @IsNumber()
-    readonly valorEstimado:     number;
+    @IsString()
+    readonly valorEstimado:     string;
 
     @IsNumber()
     readonly numerodeSerie:     number;

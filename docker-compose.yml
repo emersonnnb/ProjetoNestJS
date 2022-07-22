@@ -1,0 +1,24 @@
+# docker-compose up -d --build -V           = Comando utilizado para criar o container
+# docker logs -f "nome do container"        = Comando utilizado para rodar o container
+
+version: '3.7'
+
+services:
+  api:
+    container_name: teste1
+    build: .
+    ports:
+      - '3000:3000'
+    volumes:
+      - '.:/usr/src/app'
+      - '/usr/src/app/node_modules'
+
+  database:
+    container_name: docker
+    image: postgres:13
+    environment:
+      POSTGRES_DB: docker
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: Docker@123
+    ports:
+      - '5432:5432'

@@ -11,7 +11,7 @@ export class BicicletaService {
     constructor(
         @InjectRepository(Bicicleta)
         private readonly bicicletarepository: Repository<Bicicleta>,
-    )  {
+    ) {
 
     }
 
@@ -20,7 +20,7 @@ export class BicicletaService {
     }
 
     listOne(id: string) {
-        const bicicleta = this.bicicletarepository.findOne(id)
+        const bicicleta = this.bicicletarepository.findOneById(id);
 
         if (!bicicleta) {
             throw new NotFoundException(`Curso do ID ${id} não encontrado`);
@@ -46,7 +46,7 @@ export class BicicletaService {
     }
 
     async remove(id: string) {
-        const bicicleta = await this.bicicletarepository.findOne(id);
+        const bicicleta = await this.bicicletarepository.findOneById(id);
 
         if (!bicicleta) {
             throw new NotFoundException(`Curso do ID ${id} não encontrado`)

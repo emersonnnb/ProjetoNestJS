@@ -4,6 +4,7 @@ import { Outros } from 'src/Entities/outros.entity';
 import { OutrosService } from 'src/service/outros.service';
 import { OutrosController } from './outros.controller';
 
+
 @Module({
     imports: [TypeOrmModule.forFeature([Outros])],
     controllers: [OutrosController],
