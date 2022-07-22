@@ -2,7 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CreateDispositivosMoveisDto } from 'src/dispositivos-moveis/dto/createDispositivos.dto';
 import { UpdateDispositivosMoveisDto } from 'src/dispositivos-moveis/dto/uptadeDispositivos.dtos';
-import { DispositivosMoveis } from 'src/Entities/dispositivos-moveis';
+import { DispositivosMoveis } from 'src/Entities/dispositivos.entity';
 
 import { Repository } from 'typeorm';
 
